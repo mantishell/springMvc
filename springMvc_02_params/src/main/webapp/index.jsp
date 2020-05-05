@@ -49,5 +49,32 @@
         <input type="submit" value="提交">
     </form>
 </div>
+
+<a href="param/testRequestParam?username=xiaowang">RequestParam</a>
+
+<div>
+    RequestBody：
+    <form action="param/testRequestBody" method="post">
+        姓名：<input type="text" name="uname">
+        出生日期：<input type="text" name="birthday">
+        <input type="submit" value="提交">
+    </form>
+</div>
+
+<a href="param/testPathVariable">PathVariable</a>
+
+<div>
+        ModelAttribute：
+        <form action="param/testModelAttribute" method="post">
+            姓名：<input type="text" name="uname">
+            年龄：<input type="text" name="age">
+            <input type="submit" value="提交">
+        </form>
+</div>
+
+        <a href="param/setSessionAttributes">SessionAttributes</a>
+        <a href="param/getSessionAttributes">get</a>
+        <a href="param/delSessionAttributes">del</a>
+
 </body>
 </html>
