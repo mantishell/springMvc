@@ -22,31 +22,32 @@ import java.util.Map;
 public class ParamController {
 
     @RequestMapping("/testParam")
-    public String testParam(String username, String password){
-        System.out.println("用户名："+username+"，密码："+password);
+    public String testParam(String username, String password) {
+        System.out.println("用户名：" + username + "，密码：" + password);
         return "success";
     }
 
-        /**
-         * 请求参数绑定把数据封装到JavaBean的类中
-         * @param account
-         */
-        @RequestMapping("/saveAccount")
-        public void saveAccount(Account account){
-            System.out.println(account);
-        }
+    /**
+     * 请求参数绑定把数据封装到JavaBean的类中
+     *
+     * @param account
+     */
+    @RequestMapping("/saveAccount")
+    public void saveAccount(Account account) {
+        System.out.println(account);
+    }
 
     @RequestMapping("/saveAccount2")
-    public void saveAccount2(Account2 account){
+    public void saveAccount2(Account2 account) {
         System.out.println(account);
     }
 
     @RequestMapping("/saveUser")
-    public void saveUser(User user){
+    public void saveUser(User user) {
         System.out.println(user);
     }
 
-    public void testServlet(HttpServletRequest request, HttpServletResponse response){
+    public void testServlet(HttpServletRequest request, HttpServletResponse response) {
         System.out.println(request);
         HttpSession session = request.getSession();
         System.out.println(session);
@@ -56,31 +57,31 @@ public class ParamController {
     }
 
     @RequestMapping(path = "/testRequestParam")
-    public String testRequestParam(@RequestParam(value = "username", required = false)String name){
+    public String testRequestParam(@RequestParam(value = "username", required = false) String name) {
         System.out.println(name);
         return "success";
     }
 
     @RequestMapping("/testRequestBody")
-    public String testRequestBody(@RequestBody String body){
+    public String testRequestBody(@RequestBody String body) {
         System.out.println(body);
         return "success";
     }
 
     @RequestMapping("testPathVariable")
-    public String testPathVariable(@PathVariable(value = "id") String id){
+    public String testPathVariable(@PathVariable(value = "id") String id) {
         System.out.println(id);
         return "success";
     }
 
     @RequestMapping("testRequestHeader")
-    public String testRequestHeader(@RequestHeader(value = "Accept") String header){
+    public String testRequestHeader(@RequestHeader(value = "Accept") String header) {
         System.out.println(header);
         return "success";
     }
 
     @RequestMapping("testCookieValue")
-    public String testCookieValue(@CookieValue(value="JSESSIONID") String cookieValue){
+    public String testCookieValue(@CookieValue(value = "JSESSIONID") String cookieValue) {
         System.out.println(cookieValue);
         return "success";
     }
@@ -101,39 +102,39 @@ public class ParamController {
             return user;
         }*/
 
-        @RequestMapping("testModelAttribute")
-        public String testModelAttribute(@ModelAttribute("adc") User user){
-            System.out.println(user);
-            return "success";
-        }
+    @RequestMapping("testModelAttribute")
+    public String testModelAttribute(@ModelAttribute("adc") User user) {
+        System.out.println(user);
+        return "success";
+    }
 
-        @ModelAttribute
-        public void showUser(String uname, Map<String, User> map){
-            User user = new User();//模拟通过用户查询数据库得到的信息
-            user.setUname(uname);
-            user.setBirthday(new Date());
-            map.put("adc",user);
-        }
+    @ModelAttribute
+    public void showUser(String uname, Map<String, User> map) {
+        User user = new User();//模拟通过用户查询数据库得到的信息
+        user.setUname(uname);
+        user.setBirthday(new Date());
+        map.put("adc", user);
+    }
 
 
-        @RequestMapping("/setSessionAttributes")
-        public String setSessionAttributes(Model model){
-            System.out.println("testSessionAttributes");
-            //底层会存储到request域对象中
-            model.addAttribute("msg","张三");
-            return "success";
-        }
+    @RequestMapping("/setSessionAttributes")
+    public String setSessionAttributes(Model model) {
+        System.out.println("testSessionAttributes");
+        //底层会存储到request域对象中
+        model.addAttribute("msg", "张三");
+        return "success";
+    }
 
-        @RequestMapping("/getSessionAttributes")
-        public String getSessionAttributes(ModelMap modelMap){
-            String msg = (String) modelMap.get("msg");
-            System.out.println(msg);
-            return "success";
-        }
+    @RequestMapping("/getSessionAttributes")
+    public String getSessionAttributes(ModelMap modelMap) {
+        String msg = (String) modelMap.get("msg");
+        System.out.println(msg);
+        return "success";
+    }
 
-        @RequestMapping("/delSessionAttributes")
-        public String delSessionAttributes(SessionStatus status){
-            status.setComplete();
-            return "success";
-        }
+    @RequestMapping("/delSessionAttributes")
+    public String delSessionAttributes(SessionStatus status) {
+        status.setComplete();
+        return "success";
+    }
 }
