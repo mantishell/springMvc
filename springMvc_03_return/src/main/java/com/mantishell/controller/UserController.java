@@ -3,6 +3,7 @@ package com.mantishell.controller;
 import com.mantishell.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -59,5 +60,32 @@ public class UserController {
         //添加对象
         mv.addObject("users", users);
         return mv;
+    }
+
+    /**
+     * springmvc转发
+     * 使用forward关键字进行请求转发
+     * forward：转发的jsp路径，不走视图解析器，需要编写完整的路径
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/delete")
+    public String delete() throws Exception{
+        return "forward:/user/findAll";
+    }
+
+    /**
+     * springmvc的重定向
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/count")
+    public String count() throws  Exception{
+        return "redirect:/user/findAll";
+    }
+
+    @RequestMapping("/testJson")
+    public void testJson(@RequestBody String body){
+        System.out.println(body);
     }
 }
