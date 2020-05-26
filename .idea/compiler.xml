@@ -9,12 +9,14 @@
         <module name="springMvc_03_return" />
         <module name="springMvc_02_params" />
         <module name="springMvc_01_start" />
+        <module name="springMvc_04_file" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springMvc_01_start" target="1.8" />
       <module name="springMvc_02_params" target="1.8" />
       <module name="springMvc_03_return" target="1.8" />
+      <module name="springMvc_04_file" target="1.8" />
       <module name="springmvc_start_01" target="1.5" />
     </bytecodeTargetLevel>
   </component>
