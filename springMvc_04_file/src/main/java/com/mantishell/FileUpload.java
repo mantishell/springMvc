@@ -23,6 +23,12 @@ public class FileUpload {
         return "success";
     }
 
+    /**
+     * 跨服务器文件上传
+     * @param upload
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("fileUpload3")
     public String fileUpload3(MultipartFile upload) throws Exception{
         //定义上传文件服务器路径
