@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/springMvc_02_params/springMvc_02_params.iml" filepath="$PROJECT_DIR$/springMvc_02_params/springMvc_02_params.iml" />
       <module fileurl="file://$PROJECT_DIR$/springMvc_03_return/springMvc_03_return.iml" filepath="$PROJECT_DIR$/springMvc_03_return/springMvc_03_return.iml" />
       <module fileurl="file://$PROJECT_DIR$/springMvc_04_file/springMvc_04_file.iml" filepath="$PROJECT_DIR$/springMvc_04_file/springMvc_04_file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springMvc_05_exception/springMvc_05_exception.iml" filepath="$PROJECT_DIR$/springMvc_05_exception/springMvc_05_exception.iml" />
     </modules>
   </component>
 </project>

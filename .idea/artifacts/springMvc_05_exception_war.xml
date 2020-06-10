@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springMvc_05_exception:war">
+    <output-path>$PROJECT_DIR$/springMvc_05_exception/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>springMvc_05_exception</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="springMvc_05_exception.war">
+      <element id="artifact" artifact-name="springMvc_05_exception:war exploded" />
+    </root>
+  </artifact>
+</component>
